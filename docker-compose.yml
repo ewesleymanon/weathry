@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  weathry-server:
+    build: ./
+    container_name: weathry-server
+    ports:
+      - '40028:3000'
+    volumes:
+      - .:/app
+      - '/app/node_modules'
+    environment:
+      - WDS_SOCKET_PORT=0
+      - WATCHPACK_POLLING=true
+      
+    
