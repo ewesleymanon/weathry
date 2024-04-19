@@ -1,5 +1,5 @@
-import { Card, Grid, Typography } from "@mui/material";
-import { styled } from '@mui/system';
+import { Grid, Typography, Card } from "@mui/material";
+import styled from '@emotion/styled';
 import TemperatureChart from "./TemperatureChart";
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import WbTwilightOutlinedIcon from '@mui/icons-material/WbTwilightOutlined';
@@ -12,12 +12,21 @@ const GradientCard = styled(Card)`
   padding: 30px;
 `;
 
-
 const IconContainer = styled(Grid)`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
+`;
+
+const StyledLightModeOutlinedIcon = styled(LightModeOutlinedIcon)`
+  font-size: 100px;
+  margin-bottom: 10px;
+`;
+
+const StyledWbTwilightOutlinedIcon = styled(WbTwilightOutlinedIcon)`
+  font-size: 100px;
+  margin-bottom: 10px;
 `;
 
 interface DashboardFeatureProps {
@@ -36,12 +45,12 @@ const DashboardFeature: React.FC<DashboardFeatureProps> = ({ data, sunrise, suns
           <Typography variant="h2" gutterBottom>{capitalizeFirstLetter(weatherDescription)}</Typography>
         </IconContainer>
         <IconContainer item xs={6}>
-          <LightModeOutlinedIcon sx={{ fontSize: '100px', marginBottom: '10px' }} />
+          <StyledLightModeOutlinedIcon />
           {getFormattedTime(sunrise)}
           <Typography variant="h6" gutterBottom>Sunrise</Typography>
         </IconContainer>
         <IconContainer item xs={6}>
-          <WbTwilightOutlinedIcon sx={{ fontSize: '100px', marginBottom: '10px' }} />
+          <StyledWbTwilightOutlinedIcon />
           {getFormattedTime(sunset)}
           <Typography variant="h6" gutterBottom>Sunset</Typography>
         </IconContainer>

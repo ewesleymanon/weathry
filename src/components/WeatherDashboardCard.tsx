@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, CardContent, Typography } from '@mui/material';
-import { styled } from '@mui/system';
-import SvgIcon from '@mui/material/SvgIcon';
+import styled from '@emotion/styled';
 
 interface Props {
   title: string;
@@ -9,26 +8,21 @@ interface Props {
   value: string;
 }
 
-const WeatherCard = styled(Card)(({ theme }) => ({
-  minWidth: '200px',
-  maxWidth: '250px',
-  background: '#ecf3f8',
-}));
+const WeatherCard = styled(Card)`
+  min-width: 200px;
+  max-width: 250px;
+  background: #ecf3f8;
+`;
 
-const WeatherCardContent = styled(CardContent)(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-}));
+const WeatherCardContent = styled(CardContent)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
-const WeatherIcon = styled(SvgIcon)(({ theme }) => ({
-  fontSize: '48px',
-  marginBottom: theme.spacing(1),
-}));
-
-const WeatherValue = styled(Typography)(({ theme }) => ({
-  marginBottom: theme.spacing(2),
-}));
+const WeatherIcon = styled('div')`
+  font-size: 48px;
+`;
 
 const WeatherDashboardCard: React.FC<Props> = ({ title, icon, value }) => {
   return (
@@ -38,7 +32,7 @@ const WeatherDashboardCard: React.FC<Props> = ({ title, icon, value }) => {
           {icon}
         </WeatherIcon>
         <Typography variant="h5" gutterBottom>{title}</Typography>
-        <WeatherValue variant="body1">{value}</WeatherValue>
+        <Typography variant="body1">{value}</Typography>
       </WeatherCardContent>
     </WeatherCard>
   );

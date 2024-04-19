@@ -1,13 +1,13 @@
-FROM node:17-alpine
+FROM node:18-alpine
 
 WORKDIR /app
 
 COPY package.json .
 
 RUN apk update && apk add --no-cache libc6-compat
-RUN corepack enable && corepack prepare pnpm@8.11.0 --activate 
+# RUN corepack enable && corepack prepare pnpm@8.11.0 --activate 
 
-RUN pnpm install
+RUN npm install
 
 COPY . .
 

@@ -99,7 +99,6 @@ const useDashboard = (): UseDashboard => {
     }
   };
   
-
   useEffect(() => {
     const fetchWeatherByCurrentLocation = async () => {
       try {
@@ -128,6 +127,7 @@ const useDashboard = (): UseDashboard => {
       }
     };
     fetchWeatherByCurrentLocation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {

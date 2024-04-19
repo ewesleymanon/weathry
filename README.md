@@ -7,9 +7,19 @@
 npm install
 ```
 
+3. Env
+```
+cp .env.sample .env
+```
+
 2. Start the FE server. 
 
-**NOTE:** FE does NOT use Docker to run the FE server.
+**NOTE:** 
+#Docker
+```
+docker compose up
+```
+Local
 ```
 npm start
 ```
